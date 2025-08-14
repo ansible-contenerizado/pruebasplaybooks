@@ -1,0 +1,27 @@
+---
+- name: buscar nombre hostname del server linux
+  hosts: contenerizado
+  remote_user: redhat
+  become: true
+  become_method: sudo
+  gather_facts: true
+  tasks:
+    - name: Conexion al server y saber hotsname
+      ansible.builtin.debug:
+        msg: " nombre del hostdonde se instalo AAP contenerizado es :{{ ansible_hostname }}"
+
+    - name: print inventory_hostname
+      ansible.builtin.debug:
+        var: inventory_hostname
+
+    - name: print ansible_hostname
+      ansible.builtin.debug:
+        var: ansible_hostname
+
+    - name: print ansible_fqdn
+      ansible.builtin.debug:
+        var: ansible_fqdn
+
+    - name: debug
+      ansible.builtin.debug:
+        msg: "mi fqdn es {{ ansible_facts['fqdn']]]"
