@@ -24,4 +24,4 @@
 
     - name: debug
       ansible.builtin.debug:
-        msg: "mi fqdn es {{ ansible_facts['fqdn']]]"
+        msg: "mi fqdn es {{ ansible_facts['fqdn']}}"
